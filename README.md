@@ -1,3 +1,30 @@
+# Class notes
+
+## Understanding the codebase
+
+1. Follow the setup instructions in the README. Preview the application (deployed example site: [https://react-redux.realworld.io](https://react-redux.realworld.io))
+2. Try and understand how it works. `src/index.js` is a good place to start. Then ask...
+3. How did they setup react, redux, and react-router together?
+4. How does the Login page work?
+5. How did they structure their files? `components/`? `components/Home/`? `components/Home/index.js`?
+6. How did they use or write redux reducers?
+7. What does `src/reducer.js` do?
+
+## Observations
+
+* `store` was a separate file from src/index.js. `store` is where they import all their reducer logic.
+* Provider is on the outside of Router in index.js
+* Distinct chunks of logic are encapsulated in their own files, and then imported separately
+
+## How can it be better
+
+* Use action creators instead of explicit action objects in your dispatch methods.
+
+  * There's no files for implementing your actions. There's no action creators, so when using `mapDispatchToProps`, you're calling the whole action when it would be nicer to call the action creator instead.
+
+
+----
+
 # ![React + Redux Example App](project-logo.png)
 
 > Example React + Redux codebase that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
